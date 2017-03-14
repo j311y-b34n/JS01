@@ -1,0 +1,57 @@
+<html>
+  <body>
+    <script>
+      // If a variable is wordText, then it's text to be used in a prompt or alert.
+      // If a variable is responseWord, then it's the response to a prompt.
+      function invalid() {
+        if (responseIntroduction || responseLookAround || responseLookAtBookcase || responseTakeThing == "quit" || "give up" || "start over") {
+          game();
+        }
+        else {
+          var invalidText = "You can't do that. You try, and somehow get time-traveled. Start over, and try something else next time."
+          alert(invalidText);
+          game();
+        }
+      }
+      function game() {
+        var introductionText = "Imagine you wake up as someone throws you into a room. The door slams behind you, and you hear a lock click into place. You have no memory of how you got here. What do you do?";
+        var responseIntroduction = prompt(introductionText).toLowerCase();
+        if (responseIntroduction == "wait") {
+          var waitText = "You wait, and eventually fall asleep. You never wake up. Game over.";
+          alert(waitText);
+          }
+        else if (responseIntroduction == "look around") {
+          var lookAroundText = "You see the walls and door, made of stone. A bookcase rests in a corner.";
+          var responseLookAround = prompt(lookAroundText).toLowerCase();
+          if (responseLookAround == "look at bookcase") {
+            var lookAtBookcaseText = "In the bookcase, there is a vial of water, a book, and some weird-looking colorful plants.";
+            var responseLookAtBookcase = prompt(lookAtBookcaseText).toLowerCase();
+            if (responseLookAtBookcase == "take the vial" || "take the water" || "take the book" || "take the plants"); {
+              var takeThingText = "You take the vial and the book."
+              var responseTakeThing = prompt(takeThingText).toLowerCase();
+              if (responseTakeThing == "open book" || "read book"){
+                var readText = "You open the book to the first page, containing the author's name, Malai, and the title, The Art of P- and then a smudged group of letters. As you read this, the book somehow catches on fire. You only manage to save one page."
+                var responseRead = prompt(readText).toLowerCase();
+                // continue here
+              }
+              invalid();
+            }
+            invalid();
+          }
+          else if (responseLookAround == "look at door") {
+            var lookAtDoorText = "As you inspect the door more thoroughly, it opens. You rush out, extatic at having already found freedom. Until you see the guards coming towards you. They shove you back into your cell. Back to sqare one.";
+            alert(lookAtDoorText);
+            game();
+          }
+          invalid();
+        }
+        else if (responseIntroduction == "stop imagining") {
+          var stopImaginingText = "You are intelligient. You win.";
+          alert(stopImaginingText);
+        }
+        invalid();
+      }
+      game();
+    </script>
+  </body>
+</html>
