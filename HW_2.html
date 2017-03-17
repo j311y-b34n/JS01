@@ -1,6 +1,7 @@
 <html>
   <body>
     <script>
+      // When complete, there will be three endings: Stop Imagining, Potionista, and Daring Run.
       // If a variable is wordText, then it's text to be used in a prompt or alert.
       // If a variable is responseWord, then it's the response to a prompt.
       function invalid() {
@@ -29,24 +30,52 @@
             if (responseLookAtBookcase == "take the vial" || "take the water" || "take the book" || "take the plants"); {
               var takeThingText = "You take the vial and the book."
               var responseTakeThing = prompt(takeThingText).toLowerCase();
-              if (responseTakeThing == "open book" || "read book"){
+              if (responseTakeThing == "open book" || "read book") {
                 var readText = "You open the book to the first page, containing the author's name, Malai, and the title, The Art of P- and then a smudged group of letters. As you read this, the book somehow catches on fire. You only manage to save one page."
                 var responseRead = prompt(readText).toLowerCase();
-                // continue here
+                if (responseRead == "look at page" || "read page")  {
+                  var pageText = "The page only has a few sentences and a picture. The sentences say that potioneering is a complex and dangerous art, and should be treated with caution. The picture is of two vials of water, similar to the one you currently have. One is labelled Acid and the other is labelled Unsubstantiate. You only have one vial, but the ingredients to make either. Which do you make?"
+                  var responseRead = prompt(pageText).toLowerCase();
+                  if (responseRead == "make acid") {
+                    var acidText = "You make the acid, and pour it on the wall. You step through the growing hole, and grin until you realise you stepped into a guard station. They take you to another cell, identical to the former, except it is completely bare. You're stuck. Game over."
+                    alert(acidText);
+                  }
+                  else if (responseRead == "make unsubstantiate"){
+                    var unsubstantiateText = "You make the mysterious fluid, but what to do now? You could drink it, but it might be poison. You could throw it at the guards if they come to get you, but you have no information. Or you can save it for later."
+                    var responseUnsubstantiate = prompt(unsubstantiateText);
+                    if (responseUnsubstantiate == "drink") {
+                      var drinkText = "You drink the potion, and somehow drift through the wall behind you. You end up in a guard room, but the guards can't touch you. Ending 2/3"
+                      alert(drinkText);
+                    }
+                    else if (responseUnsubstantiate == "save" || "wait") {
+                      var saveText = "You wait, but never get the opportunity to use the potion. Game over."
+                    }
+                    invalid();
+                  }
+                }
+                invalid();
               }
               invalid();
             }
             invalid();
           }
           else if (responseLookAround == "look at door") {
-            var lookAtDoorText = "As you inspect the door more thoroughly, it opens. You rush out, extatic at having already found freedom. Until you see the guards coming towards you. They shove you back into your cell. Back to sqare one.";
-            alert(lookAtDoorText);
-            game();
+            var lookAtDoorText = "As you inspect the door more thoroughly, it opens. You rush out, extatic at having already found freedom. A guard is coming at you from the right. Do you go forwards or left?";
+            var runResponse = promot (lookAtDoorText).toLowerCase();
+            if (runResponse == "straight") {
+              var straightText = "You sprint straight ahead, and out through a door. You're free! Ending 3/3"
+              alert(straightText)
+            }
+            else if (runResponse == "left") {
+              var leftText = "Dead end. The guards throw you back in your cell."
+              alert(leftText);
+              game();
+            }
           }
           invalid();
         }
         else if (responseIntroduction == "stop imagining") {
-          var stopImaginingText = "You are intelligient. You win.";
+          var stopImaginingText = "You are intelligient. You win. Ending 1/3";
           alert(stopImaginingText);
         }
         invalid();
