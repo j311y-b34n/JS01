@@ -60,13 +60,13 @@
             invalid();
           }
           else if (responseLookAround == "look at door") {
-            var lookAtDoorText = "As you inspect the door more thoroughly, it opens. You rush out, extatic at having already found freedom. A guard is coming at you from the right. Do you go forwards or left?";
+            var lookAtDoorText = "As you inspect the door more thoroughly, it opens. You rush out, extatic at having already found freedom. A guard is coming at you from the right. Do you go straight or left?";
             var runResponse = prompt(lookAtDoorText).toLowerCase();
-            if (runResponse == "straight") {
+            if (runResponse == "straight" || "go straight") {
               var straightText = "You sprint straight ahead, and out through a door. You're free! Ending 3/3"
-              alert(straightText)
+              alert(straightText);
             }
-            else if (runResponse == "left") {
+            else if (runResponse == "left" || "go left") {
               var leftText = "Dead end. The guards throw you back in your cell."
               alert(leftText);
               game();
