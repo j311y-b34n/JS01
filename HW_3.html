@@ -1,0 +1,64 @@
+<html>
+  <body>
+    <script>
+      function realGame() {
+        var computerChoice = Math.round(Math.random * 3)
+      //  1 = "rock"
+      //  2 = "paper"
+      //  3 = "scissors"
+        var realPlayerResponse = prompt("Rock, Paper, Scissors").toLowerCase();
+        if (computerChoice === 1){
+          if (realPlayerResponse === "rock") {
+            alert("You both chose rock. Tie.");
+          }
+          else if (realPlayerResponse === "paper"){
+            alert("The computer chose rock. You win.");
+          }
+          else if (realPlayerResponse === "scissors") {
+            alert("The computer chose rock. You lose.")
+          }
+        }
+        else if (computerChoice === 2){
+          if (realPlayerResponse === "rock") {
+            alert("The computer chose paper. You lose.");
+          }
+          else if (realPlayerResponse === "paper"){
+            alert("The computer chose paper. Tie.");
+          }
+          else if (realPlayerResponse === "scissors") {
+            alert("The computer chose paper. You win.")
+          }
+        }
+        else if (computerChoice === 3){
+          if (realPlayerResponse === "rock") {
+            alert("The computer chose scissors. You win.");
+          }
+          else if (realPlayerResponse === "paper"){
+            alert("The computer chose scissors. You lose.");
+          }
+          else if (realPlayerResponse === "scissors") {
+            alert("The computer chose scissors. You tie.")
+          }
+        }
+      }
+      var rounds = 1;
+      while (rounds < 3) {
+        var playerResponse = prompt("Rock, Paper, Scissors").toLowerCase();
+        if (playerResponse === "rock") {
+          alert("The computer chose paper. You lose.");
+        }
+        else if (playerResponse === "paper") {
+          alert("The computer chose scissors. You lose.");
+        }
+        else if (playerResponse === "scissors") {
+          alert("The computer chose rock. You lose.");
+        }
+        else if (playerResponse === "gun") {
+          alert("You win. Now you get access to the real game.")
+          realGame();
+        }
+        rounds = rounds + 1;
+      }
+    </script>
+  </body>
+</html>
