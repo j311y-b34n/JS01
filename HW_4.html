@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Julia's Mad Lib</title>
+  </head>
+  <body>
+    <script>
+      // PERSON IN ROOM wakes up one day to a morning full of NOUN. He/She feels ADJECTIVE. He/She goes VERB all day, with OTHER PERSON IN ROOM.
+      function go() {
+        var person1Input = document.getElementById("person1")
+        var nounInput = document.getElementById("noun1");
+        var adjInput = document.getElementById("adj1");
+        var verbInput = document.getElementById("verb1");
+        var person2Input = document.getElementById("person2")
+
+        alert(person1Input.value + " wakes up one day to a morning full of " + nounInput.value + ". He/She feels " + adjInput.value + ". He/She goes " + verbInput.value + " all day with " + person2.value + ".")
+      }
+    </script>
+    <label for="person1">Person In Room 1</label>
+    <input id="person1"></input><br>
+
+    <label for="noun1">Plural Noun 1</label>
+    <input id="noun1"></input><br>
+
+    <label for="adj1">Adjective 1</label>
+    <input id="adj1"></input><br>
+
+    <label for="verb1">Verb with -ing 1</label>
+    <input id="verb1"></input><br>
+
+    <label for="person2">Person In Room 2</label>
+    <input id="person2"></input><br>
+
+    <button onclick="go();">Go</button>
+  </body>
+</html>
