@@ -6,13 +6,13 @@
     <script>
       // PERSON IN ROOM wakes up one day to a morning full of NOUN. He/She feels ADJECTIVE. He/She goes VERB all day, with OTHER PERSON IN ROOM.
       function go() {
-        var person1Input = document.getElementById("person1")
-        var nounInput = document.getElementById("noun1");
-        var adjInput = document.getElementById("adj1");
-        var verbInput = document.getElementById("verb1");
-        var person2Input = document.getElementById("person2")
+        var person1Input = document.getElementById("person1").value;
+        var nounInput = document.getElementById("noun1").value;
+        var adjInput = document.getElementById("adj1").value;
+        var verbInput = document.getElementById("verb1").value;
+        var person2Input = document.getElementById("person2").value;
 
-        alert(person1Input.value + " wakes up one day to a morning full of " + nounInput.value + ". He/She feels " + adjInput.value + ". He/She goes " + verbInput.value + " all day with " + person2.value + ".")
+        alert(person1Input + " wakes up one day to a morning full of " + nounInput + ". He/She feels " + adjInput + ". He/She goes " + verbInput + " all day with " + person2 + ".")
       }
     </script>
     <label for="person1">Person In Room 1</label>
