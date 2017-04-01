@@ -1,0 +1,12 @@
+html{
+  background-color:hsl(0, 100%, 0%);
+}
+body{
+  color:hsl(280, 100%, 30%);
+  font-size:50px;
+}
+button{
+  background-color:hsl(0, 100%, 0%);
+  color:hsl(0, 0%, 100%);
+  font-size:100px;
+}

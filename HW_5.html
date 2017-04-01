@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="HW_5_Styles.css">
+    <script>
+      function go() {
+        var list = [];
+        var listInput1 = document.getElementById("1").value;
+        var listInput2 = document.getElementById("2").value;
+        var listInput3 = document.getElementById("3").value;
+        var listInput4 = document.getElementById("4").value;
+        var listInput5 = document.getElementById("5").value;
+        var listInput6 = document.getElementById("6").value;
+
+        list.push(listInput1);
+        list.push(listInput2);
+        list.push(listInput3);
+        list.push(listInput4);
+        list.push(listInput5);
+        list.push(listInput6);
+
+        var alertNumber = 0;
+
+        while (list.length > alertNumber) {
+          alert(list[alertNumber]);
+          alertNumber = alertNumber + 1;
+        }
+
+      }
+    </script>
+    <label for="1">List Input 1</label>
+    <input id="1"></input><br>
+
+    <label for="2">List Input 2</label>
+    <input id="2"></input><br>
+
+    <label for="3">List Input 3</label>
+    <input id="3"></input><br>
+
+    <label for="4">List Input 4</label>
+    <input id="4"></input><br>
+
+    <label for="5">List Input 5</label>
+    <input id="5"></input><br>
+
+    <label for="6">List Input 6</label>
+    <input id="6"></input><br>
+
+    <button onclick="go();">Go</button>
+  </head>
+</html>

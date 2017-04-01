@@ -3,4 +3,33 @@
     <title>Escape</title>
     <!-- Put a link to a CSS document here-->
   </head>
+  <body>
+    <script>
+    function invalid() {
+        var invalidText = "You can't do that. You try, and somehow get time-traveled. Start over, and try something else next time."
+        alert(invalidText);
+        game();
+    }
+    function game() {
+      function beginning(){
+        var introductionText = "Imagine you wake up as someone throws you into a room. The door slams behind you, and you hear a lock click into place. You have no memory of how you got here. What do you do?";
+        var responseIntroduction = prompt(introductionText).toLowerCase();
+        if responseIntroduction === "wait" {
+          wait();
+        }
+        else if responseIntroduction === "look around" {
+          look_around();
+        }
+      }
+      function wait() {
+        var waitText = "You wait, and eventually fall asleep. You never wake up. Game over.";
+        alert(waitText);
+      }
+      function look_around() {
+        
+      }
+    }
+
+    </script>
+  </body>
 </html>
