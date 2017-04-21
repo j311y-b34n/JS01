@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <script>
+      function start() {
+        Crafty.init();
+
+        var player = Crafty.e("2D, DOM, Color, Twoway, Gravity");
+        /* The player has a lot of properties. 2d and color give it a 2d rendering
+        and color. W and H are width and height, and player.color assigns a color.
+        Crafty.e makes an entity, and everything else is random crafty stuff you
+        have to do. X and Y are coordinates.
+        */
+        player.w = 5;
+        player.h = 5;
+
+        player.color("purple");
+
+        player.twoway(300);
+        player.gravity();
+      }
+
+      window.onload = start;
+    </script>
+  </body>
+</html>

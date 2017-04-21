@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      html{
+        background-color:hsl(290, 100%, 30%);
+        text-align:center;
+        color:hsl(0, 0%, 0%);
+        font-size:100px;
+        font-family:fantasy;
+      }
+      button{
+        text-align:center;
+        color:hsl(0, 50%, 20%);
+      }
+    </style>
+  </head>
+  <body>
+   <div id="card"></div>
+   <input type="text" id="answer" autofocus></input>
+   <button onclick="checkAnswer();">Submit</button>
+    <script>
+      var questions = [
+        "question?",
+        "Is Po spelled with an e?",
+        "What is my hockey number?",
+        "What is the tallest building in the world?",
+        "What school do I go to?",
+        "What have I got in my pocket?",
+        "What is my favorite book?"
+      ];
+      var answer = [
+        "answer",
+        "NO",
+        "29",
+        "Burj Khalifa",
+        "Trevor Day School",
+        "The Ring",
+        "NEVER ASK ME THAT AGAIN OR I WILL EXPLODE"
+      ];
+      var number = 0;
+      card.textContent = questions[number];
+      function checkAnswer() {
+        var card = document.getElementById("card");
+        var input = document.getElementById("answer");
+        var userAnswer = input.value;
+        if (userAnswer === answer[number]) {
+          alert("Correct");
+        }
+        else {
+          alert("Incorrect, answer is " + answer[number]);
+        }
+        number = number + 1;
+        card.textContent = questions[number];
+      }
+    </script>
+  </body>
+</html>
