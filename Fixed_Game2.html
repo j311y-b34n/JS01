@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <b><u>Escape</u></b><br>
+    <link type="text/css" rel="stylesheet" href="Fixed_Game2_Styles.css">
+  </head>
+  <body>
+    <br>
+    <div id="display"></div>
+    <br>
+    <input type="text" id="responseBox" autofocus></div><br>
+    <button id="submitButton" onclick="play();">Submit</button><br>
+    <button id="startButton" onclick="game();">Play</button>
+    <script>
+      document.getElementById("submitButton").style.visibility = 'hidden'
+      document.getElementById("responseBox").style.visibility = 'hidden'
+      var promptNumber = 1;
+      function game() {
+        document.getElementById("startButton").style.visibility = 'hidden'
+        document.getElementById("responseBox").style.visibility = 'visible'
+        document.getElementById("submitButton").style.visibility = 'visible'
+
+        display.textContent = prompt[promptNumber];
+      }
+
+      function play() {
+        var prompt = document.getElementById("prompt");
+        var input = document.getElementById("responseBox");
+        var userAnswer = input.value.toLowerCase();
+        function introduction() {
+          if (promptNumber === 1) {
+            if (userAnswer === "stop imagining") {
+              stopImagining();
+            } else if (userAnswer === "wait") {
+              wait();
+            } else if (userAnswer === "look around") {
+              lookAround();
+            }
+          }
+        }
+        introduction();
+        function stopImagining() {
+          promptNumber = 21;
+        }
+        function wait() {
+          promptNumber = 3;
+          display.textContent = prompt[promptNumber];
+          var time = new Date();
+          var elapsed = new Date() - time * 1000;
+          if (elapsed = 20) {
+
+          }
+          // The two above functions should start counting time in miliseconds. Test to see if this is true, and use to show the original text.
+        }
+        function lookAround() {
+
+        }
+      }
+        var prompt = [
+          "You can't do that. Try again.",
+          "Imagine you wake up as someone throws you into a room. The door slams behind you, and you hear a lock click into place. You have no memory of how you got here. What do you do?",
+          "You do, and break your toes. You pass out from the pain, and never wake up. Game over.",
+          "You wait, and eventually fall asleep. You wake up in the same situation you were in before.",
+          "You see the walls and door, made of stone. A bookcase rests in a corner.",
+          "You look, but it's made of solid stone. There's no way to break it. Suddenly, as you watch, it's thrown open. You can either make a run for it or wait for whatever's coming.",
+          "In the bookcase, there is a vial of water, a book, and some weird-looking colorful plants.",
+          "You attempt and pick up the plant pots, but they're too heavy.",
+          "You take the book, and flip it open to its first page. As you do, it lights on fire. You only save one page.",
+          "Taken. Everything takes on a surreal quality, and objects begin to glow softly, especially the book.",
+          "Now that you have both the book and the vial, the page begins to glow. Two images appear on it. Both are of a vial like yours with different plants inside, one labelled Acid, and the other labelled Unsubstantiate. You can attempt making either the Acid or Unsubstantiate. Which do you make?",
+          "You sucessfully make the acid, but it quickly burns through the bookshelf you mixed it on. It continues to spread, enveloping you and everything else. Game Over.",
+          "It takes you a really long time, but eventually you make the Unsubstantiate potion, but now you have to figure out what to do with it. You can drink it, or save it for later.",
+          "You hope for luck and drink. Your whole body somehow becomes mist, and you discover you can drift through walls. You go in a straight line. through a guard room and out into the open air. However, you do not know how to reverse the effects of the potion, and you were the origin of the myth of ghosts. Ending 1/4",
+          "You decide to wait for a time to drink the potion, but never find it. Eventually you fall asleep, and when you wake up you're back at home. You sigh and realize it was all a dream. Ending 2/4",
+          "You sprint out the open door. The two guards that were about to come in are stunned for a moment, but then you hear them chasing you. The hallway ahead splits into a T. Do you go left or right?",
+          "You skid around the corner, and then stop dead. To the left you see a button in a case that is labelled 'Free.' The other hallway has a door that has sunlight shining past it. What do you do?",
+          "You lift the cover and slam your palm into the button. It emits a loud beeping noise, and with a small noise a net falls from the ceiling. The guards chasing you chuckle and put you back in your cell.",
+          "With a burst of adrenaline, you race to the door. You burst out into open air, but see guns on the wall above you. They can't see you yet. You slam the door behind you, sealing the other guards in. You can try and sneak out, or just run.",
+          "You begin running again, and immediately hear the gunshots. You try and weave around so they can't hit you, but you trip over a tree root. You fall and get shot. Game Over.",
+          "You sneak around until you find a spot with no guns. You briskly walk away with an exciting story to tell. Ending 3/4",
+          "YOU FOUND THE HIDDEN ENDING!!! Congratulations, Smart One, and find happiness in life. Ending 4/4"
+        ]
+
+    </script>
+  </body>
+</html>

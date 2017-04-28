@@ -7,27 +7,38 @@
       function start() {
         Crafty.init();
 
-        var player = Crafty.e("2D, DOM, Color, TwoWay, Gravity");
-        /* The player has a lot of properties. 2d and color give it a 2d rendering
-        and color. W and H are width and height, and player.color assigns a color.
-        Crafty.e makes an entity, and everything else is random crafty stuff you
-        have to do.
-        */
+        var platform = Crafty.e("2D, DOM, Color, Floor, Canvas, Fourway")
+        var x = 1;
+        var hitEdgeLeft = false;
+        var hitEdgeRight = true;
+        platform.w = 150;
+        platform.h = 5;
+        platform.color("black");
+        platform.x = 600 - x;
+
+    /*    if (x === 600) {
+          hitEdgeLeft = true;
+          hitEdgeRight = false;
+        }
+        while (hitEdgeLeft === true) {
+          x = x - 1;
+        }
+        while (hitEdgeRight === true) {
+          x = x + 1;
+        }
+        if (x === 0) {
+          hitEdgeRight = true;
+          hitEdgeLeft = false;
+        }
+        platform.y = 300;
+*/
+        var player = Crafty.e("2D, DOM, Color, Twoway, Gravity, Canvas");
         player.w = 50;
         player.h = 50;
         player.color("purple");
         player.x = 600;
-        player.twoway(300);
+        player.twoway(100);
         player.gravity("Floor");
-
-        var platform = Crafty.e("2D, DOM, Color, Floor")
-
-        platform.w = 150;
-        platform.h = 5;
-        platform.color("black");
-        platform.x = 600;
-        platform.y = 300;
-
 
       }
 
