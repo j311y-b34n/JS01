@@ -13,58 +13,231 @@
     <script>
       document.getElementById("submitButton").style.visibility = 'hidden'
       document.getElementById("responseBox").style.visibility = 'hidden'
+
+      var prompt = document.getElementById("prompt");
+      var input = document.getElementById("responseBox");
+      var userAnswer = input.value.toLowerCase();
       var promptNumber = 1;
+
       function game() {
         document.getElementById("startButton").style.visibility = 'hidden'
         document.getElementById("responseBox").style.visibility = 'visible'
         document.getElementById("submitButton").style.visibility = 'visible'
+        if (promptNumber === 2){
 
-        display.textContent = prompt[promptNumber];
+          promptNumber = 1;
+          play();
+        }
+        display.textContent = promptList[promptNumber];
+      }
+      function reset() {
+        display.textContent = promptList[promptNumber];
+        userAnswer = input.value.toLowerCase();
+      }
+      function invalid() {
+        alert("That was an invalid function. Try again.");
+        introduction();
       }
 
       function play() {
-        var prompt = document.getElementById("prompt");
-        var input = document.getElementById("responseBox");
-        var userAnswer = input.value.toLowerCase();
-        function introduction() {
-          if (promptNumber === 1) {
-            if (userAnswer === "stop imagining") {
-              stopImagining();
-            } else if (userAnswer === "wait") {
-              wait();
-            } else if (userAnswer === "look around") {
-              lookAround();
-            }
-          }
-        }
+        var bookTaken = false;
+        var vialTaken = true;
+        reset();
         introduction();
-        function stopImagining() {
-          promptNumber = 21;
-        }
-        function wait() {
-          promptNumber = 3;
-          display.textContent = prompt[promptNumber];
-          var time = new Date();
-          var elapsed = new Date() - time * 1000;
-          if (elapsed = 20) {
+      }
 
+      function introduction() {
+        if (promptNumber === 1) {
+          if (userAnswer === "stop imagining") {
+            stopImagining();
+          } else if (userAnswer === "wait") {
+            wait();
+          } else if (userAnswer === "look around") {
+            lookAround();
           }
-          // The two above functions should start counting time in miliseconds. Test to see if this is true, and use to show the original text.
-        }
-        function lookAround() {
-
+        } else if (promptNumber === 2) {
+          promptNumber = 1;
+          introduction();
+        } else if (promptNumber === 3) {
+          if (userAnswer === "look at bookcase") {
+            lookAtBookcase();
+          } else if (userAnswer === "look at door") {
+            lookAtDoor();
+          }
+        } else if (promptNumber === 5) {
+          if (userAnswer === "take plants") {
+            takePlants();
+          } else if (userAnswer === "take book") {
+            takeBook();
+          } else if (userAnswer === "take vial") {
+            takeVial();
+          }
+        } else if (promptNumber === 4) {
+          if (userAnswer === "run") {
+            run();
+          } else if (userAnswer === "wait") {
+            waitToGo();
+          }
+        } else if (promptNumber === 7) {
+          if (vialTaken = true) {
+            bookAndVial();
+          } else {
+            book();
+          }
+        } else if (promptNumber === 8) {
+          if (bookTaken === true) {
+            bookAndVial();
+          } else {
+            vial();
+          }
+        } else if (promptNumber === 9) {
+          if (userAnswer === "acid") {
+            acid();
+          } else if (userAnswer === "unsubstantiate") {
+            unsubstantiate();
+          }
+        } else if (promptNumber === 7) {
+          if (userAnswer === "look at page") {
+            lookAtPage();
+          }
+        } else if (promptNumber === 10) {
+          acid();
+        } else if (promptNumber === 11) {
+          if (userAnswer === "drink") {
+            drink();
+          } else if (userAnswer == "wait") {
+            waitToDrink();
+          }
+        } else if (promptNumber === 22) {
+          promptNumber = 7;
+          introduction();
+        } else if (promptNumber = 14) {
+          promptNumber = 15;
+          introduction();
+        } else if (promptNumber === 15) {
+          if (userAnswer === "free") {
+            free();
+          } else if (userAnswer === "flee") {
+            flee();
+          }
+        } else if (promptNumber === 17) {
+          if (userResponse === "run") {
+            outside();
+          } else if (userResponse === "sneak around") {
+            sneak();
+          }
         }
       }
-        var prompt = [
+
+      function stopImagining() {
+        promptNumber = 20;
+        reset();
+      }
+      function wait() {
+        promptNumber = 2;
+        reset();
+        introduction();
+      }
+      function lookAround() {
+        promptNumber = 3;
+        reset();
+        introduction();
+      }
+      function lookAtBookcase() {
+        promptNumber = 5;
+        reset();
+        introduction();
+      }
+      function lookAtDoor() {
+        promptNumber = 4;
+        reset();
+        introduction();
+      }
+      function takePlants() {
+        promptNumber = 6;
+        reset();
+        introduction();
+      }
+      function takeBook() {
+        promptNumber = 7;
+        bookTaken = true;
+        reset();
+        introduction;
+      }
+      function takeVial() {
+        promptNumber = 8;
+        vialTaken = true;
+        reset();
+        introduction();
+      }
+      function bookAndVial() {
+        promptNumber = 9;
+        reset();
+        introduction();
+      }
+      function book() {
+        promptNumber = 7;
+        reset();
+        introduction();
+      }
+      function vial() {
+        promptNumber = 8;
+        reset();
+        introduction;
+      }
+      function waitToGo() {
+        promptNumber = 21;
+      }
+      function acid() {
+        promptNumber = 10;
+        reset();
+        introduction();
+      }
+      function unsubstantiate() {
+        promptNumber = 11;
+        reset();
+        introduction();
+      }
+      function drink() {
+        promptNumber = 12;
+      }
+      function waitToDrink() {
+        promptNumber = 13;
+      }
+      function lookAtPage() {
+        promptNumber = 22;
+        reset();
+        introduction();
+      }
+      function run() {
+        promptNumber = 14;
+        reset();
+        introduction();
+      }
+      function free() {
+        promptNumber = 16;
+      }
+      function flee() {
+        promptNumber = 17;
+        reset();
+        introduction();
+      }
+      function outside() {
+        promptNumber = 18;
+      }
+      function sneak() {
+        promptNumber = 19;
+      }
+
+        var promptList = [
           "You can't do that. Try again.",
           "Imagine you wake up as someone throws you into a room. The door slams behind you, and you hear a lock click into place. You have no memory of how you got here. What do you do?",
-          "You do, and break your toes. You pass out from the pain, and never wake up. Game over.",
           "You wait, and eventually fall asleep. You wake up in the same situation you were in before.",
           "You see the walls and door, made of stone. A bookcase rests in a corner.",
           "You look, but it's made of solid stone. There's no way to break it. Suddenly, as you watch, it's thrown open. You can either make a run for it or wait for whatever's coming.",
           "In the bookcase, there is a vial of water, a book, and some weird-looking colorful plants.",
           "You attempt and pick up the plant pots, but they're too heavy.",
-          "You take the book, and flip it open to its first page. As you do, it lights on fire. You only save one page.",
+          "You take the book, and flip it open to its first page. As you do, it lights on fire. You only save one page. What do you do?",
           "Taken. Everything takes on a surreal quality, and objects begin to glow softly, especially the book.",
           "Now that you have both the book and the vial, the page begins to glow. Two images appear on it. Both are of a vial like yours with different plants inside, one labelled Acid, and the other labelled Unsubstantiate. You can attempt making either the Acid or Unsubstantiate. Which do you make?",
           "You sucessfully make the acid, but it quickly burns through the bookshelf you mixed it on. It continues to spread, enveloping you and everything else. Game Over.",
@@ -72,12 +245,14 @@
           "You hope for luck and drink. Your whole body somehow becomes mist, and you discover you can drift through walls. You go in a straight line. through a guard room and out into the open air. However, you do not know how to reverse the effects of the potion, and you were the origin of the myth of ghosts. Ending 1/4",
           "You decide to wait for a time to drink the potion, but never find it. Eventually you fall asleep, and when you wake up you're back at home. You sigh and realize it was all a dream. Ending 2/4",
           "You sprint out the open door. The two guards that were about to come in are stunned for a moment, but then you hear them chasing you. The hallway ahead splits into a T. Do you go left or right?",
-          "You skid around the corner, and then stop dead. To the left you see a button in a case that is labelled 'Free.' The other hallway has a door that has sunlight shining past it. What do you do?",
+          "You skid around the corner, and then stop dead. To the left you see a button in a case that is labelled 'Free.' The other hallway has a door that has sunlight shining past it. What do you do, free or flee?",
           "You lift the cover and slam your palm into the button. It emits a loud beeping noise, and with a small noise a net falls from the ceiling. The guards chasing you chuckle and put you back in your cell.",
           "With a burst of adrenaline, you race to the door. You burst out into open air, but see guns on the wall above you. They can't see you yet. You slam the door behind you, sealing the other guards in. You can try and sneak out, or just run.",
           "You begin running again, and immediately hear the gunshots. You try and weave around so they can't hit you, but you trip over a tree root. You fall and get shot. Game Over.",
           "You sneak around until you find a spot with no guns. You briskly walk away with an exciting story to tell. Ending 3/4",
-          "YOU FOUND THE HIDDEN ENDING!!! Congratulations, Smart One, and find happiness in life. Ending 4/4"
+          "YOU FOUND THE HIDDEN ENDING!!! Congratulations, Smart One, and find happiness in life. Ending 4/4",
+          "You choose not to run, and watch tensely as the guards enter. One shoots you, and everything goes black. Game Over.",
+          "You glance at the page, but it seems blank. Suddenly, the vial glows brightly, illuminating the small space."
         ]
 
     </script>

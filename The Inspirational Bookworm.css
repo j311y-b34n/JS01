@@ -1,0 +1,72 @@
+p{
+  font-family:'Barrio', cursive;
+  text-align:center;
+  font-size:100px;
+  color:hsl(200, 65%, 50%);
+}
+
+p span {
+  opacity: 0.5;
+}
+
+article span {
+  color: blue;
+}
+
+p span:nth-child(odd):hover {
+  color:hsl(290, 65%, 50%);
+}
+
+p span:nth-child(even):hover {
+  color:hsl(150, 70%, 40%);
+}
+
+span:hover{
+  opacity:1;
+  transition-property: color;
+  transition-duration: 2s;
+}
+
+div:nth-child(even){
+  display:inline-block;
+  float:right;
+  width:47%;
+  font-family: 'Indie Flower', cursive;
+  font-size: 60px;
+  color:hsl(235, 20%, 60%);
+  text-align:right;
+}
+
+div:nth-child(odd){
+  display:inline-block;
+  float:left;
+  width:47%;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  opacity:.9;
+}
+
+article{
+  font-family: 'Yatra One', cursive;
+  display:block;
+  float:left;
+  text-align:right;
+  font-size:100px;
+  opacity: .8;
+  color:hsl(113, 96%, 61%);
+}
+
+article span{
+  opacity: 0;
+  color:hsl(0, 100%, 0%);
+}
+
+article span:hover{
+  opacity:1;
+  transition-property: opacity;
+  transition-duration: .25;
+}
+
+body {
+  background-color:cyan;
+}
