@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+    <style type="text/css">
+      div.verse{
+        color:var(--purple);
+      }
+      div.pre-chorus{
+        color:var(--blue);
+      }
+      div.chorus{
+        color:var(--cyan)
+      }
+      div.bridge{
+        color:var(--green)
+      }
+      div.song{
+        text-align:center;
+        font-family: 'Barrio', cursive;
+        font-size:50px;
+      }
+      div.line:nth-child(1){
+        color:var(--bright-purple);
+        opacity:.025;
+      }
+      div.line{
+        opacity:.05;
+      }
+      span.light{
+        color:var(--yellow);
+      }
+      span.dark{
+        color:var(--black);
+      }
+      span.dark:hover{
+        opacity:1;
+        transition-property:opacity;
+        transition-duration:var(--length);
+        display:block;
+        float:right;
+        transition-property:float;
+        transition-duration:var(--length);
+      }
+
+      body{
+        --hue: 270;
+        --purple: hsl(calc(var(--hue)), 100%, 50%);
+        --blue: hsl(calc(var(--hue) - 30), 100%, 50%);
+        --cyan: hsl(calc(var(--hue) - 70), 100%, 50%);
+        --green: hsl(calc(var(--hue) - 130), 100%, 50%);
+        --bright-purple: hsl(var(--hue), 100%, 80%);
+        --yellow: hsl(calc(var(--hue) - 200), 100%, 50%);
+        --black: hsl(var(--hue), 25%, 10%);
+
+        --length: 2s;
+        background-color:hsl(270, 25%, 20%);
+      }
+
+      div.line:hover{
+        opacity:1;
+        transition-property:opacity;
+        transition-duration:var(--length);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="song">
+      <div class="verse">
+        <div class="line">You got a face not spoiled by beauty</div>
+        <div class="line">I have some scars from where I've been</div>
+        <div class="line">You've got eyes that can see right through me</div>
+        <div class="line">You’re not afraid of anything they've seen</div>
+        <div class="line">I was told that I would feel nothing the first time</div>
+        <div class="line">I don’t know how these cuts heal</div>
+        <div class="line">But in you I found a rhyme</div>
+      </div>
+
+      <div class="pre-chorus">
+        <div class="line">If there is a <span class="light">light</span></div>
+        <div class="line">You can’t always see</div>
+        <div class="line">And there is a world</div>
+        <div class="line">We can’t always be</div>
+        <div class="line">If there is a <span class="dark">dark</span></div>
+        <div class="line">Now we shouldn't doubt</div>
+        <div class="line">And there is a <span class="light">light</span></div>
+        <div class="line">Don’t let it go <span class="dark">out</span></div>
+      </div>
+
+      <div class="chorus">
+        <div class="line">And this is a song</div>
+        <div class="line">A song for someone</div>
+        <div class="line">This is a song</div>
+        <div class="line">A song for someone</div>
+      </div>
+
+      <div class="verse">
+        <div class="line">You let me into a conversation</div>
+        <div class="line">A conversation only we could make</div>
+        <div class="line">You break and enter my imagination</div>
+        <div class="line">Whatever’s in there</div>
+        <div class="line">It’s yours to take</div>
+        <div class="line">I was told I’d feel nothing the first time</div>
+        <div class="line">You were slow to heal</div>
+        <div class="line">But this could be the <span class="dark">night</span></div>
+      </div>
+
+      <div class="pre-chorus">
+        <div class="line">If there is a <span class="light">light</span></div>
+        <div class="line">You can’t always see</div>
+        <div class="line">And there is a world</div>
+        <div class="line">We can’t always be</div>
+        <div class="line">If there is a <span class="dark">dark</span></div>
+        <div class="line">Now we shouldn't doubt</div>
+        <div class="line">And there is a <span class="light">light</span></div>
+        <div class="line">Don’t let it go <span class="dark">out</span></div>
+      </div>
+
+      <div class="chorus">
+        <div class="line">And this is a song</div>
+        <div class="line">A song for someone</div>
+        <div class="line">This is a song</div>
+        <div class="line">A song for someone</div>
+      </div>
+
+      <div class="bridge">
+        <div class="line">Yeah, yeah, yeah, yeah</div>
+        <div class="line">Yeah, yeah, yeah, yeah</div>
+      </div>
+
+      <div class="verse">
+        <div class="line">And I’m a long way</div>
+        <div class="line">From your hill of Calvary</div>
+        <div class="line">And I’m a long way</div>
+        <div class="line">From where I was, where I need to be</div>
+        <div class="line">If there is a <span class="light">light</span></div>
+        <div class="line">You can’t always see</div>
+        <div class="line">And there is a world</div>
+        <div class="line">We can’t always be</div>
+        <div class="line">If there is a kiss</div>
+        <div class="line">I stole from your mouth</div>
+        <div class="line">And there is a <span class="light">light</span></div>
+        <div class="line">Don’t let it go <span class="dark">out</span></div>
+      </div>
+    </div>
+  </body>
+</html>

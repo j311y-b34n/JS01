@@ -46,25 +46,33 @@ div:nth-child(odd){
   opacity:.9;
 }
 
-article{
+article:nth-child(even){
   font-family: 'Yatra One', cursive;
   display:block;
   float:left;
   text-align:right;
   font-size:100px;
   opacity: .8;
-  color:hsl(113, 96%, 61%);
+  color:hsl(170, 96%, 25%);
 }
 
-article span{
+article:nth-child(even) span{
   opacity: 0;
   color:hsl(0, 100%, 0%);
 }
 
-article span:hover{
+/*article:nth-child(even) span:hover{
   opacity:1;
   transition-property: opacity;
   transition-duration: .25;
+}*/
+
+article:nth-child(even){
+  float:left;
+  text-align:center;
+  font-size: 80px;
+  font-family: 'Satisfy', cursive;
+  color:hsl(140, 85%, 35%);
 }
 
 body {

@@ -1,0 +1,42 @@
+<html>
+  <head>
+  </head>
+  <body>
+
+    <script>
+
+      function Go() {
+
+        var bill = document.getElementById("bill").value;
+        var tip = document.getElementById("tip").value;
+        var people = document.getElementById("people").value;
+
+        var tipMultiplier = Math.abs(tip/100+1);
+        console.log(tipMultiplier);
+        var total = Math.abs(tipMultiplier*bill);
+        console.log(total);
+        var perPerson = Math.abs(total/people);
+        console.log(perPerson);
+
+        tipAmount.textContent = tipMultiplier;
+        total.textContent = total;
+        totalPerPerson.textContent = perPerson;
+      }
+    </script>
+    <span>
+      <div id="label1">Bill</div>
+      <input type=number id="bill" autofocus></input>
+      <div id="label2">Tip %</div>
+      <input type=number id="tip" autofocus></input>
+      <div id="label3">Number of People</div>
+      <input type=number id="people" autofocus></input>
+      <br>
+      <button id="go" onclick="Go()">Calculate</button>
+    </span>
+    <span>
+      <div id="tipAmount"></div>
+      <div id="total"></div>
+      <div id="totalPerPerson"></div>
+    </span>
+  </body>
+</html>
